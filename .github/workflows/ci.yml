@@ -10,14 +10,14 @@ on:
     # filtering branches here prevents duplicate builds from pull_request and push
     branches:
       - main
-      - "v*"
+      - 'v*'
     # always run CI for tags
     tags:
-      - "*"
+      - '*'
 
   # early issue detection: run CI weekly on Sundays
   schedule:
-    - cron: "0 6 * * 0"
+    - cron: '0 6 * * 0'
 
 env:
   CI: true
@@ -62,7 +62,9 @@ jobs:
     strategy:
       matrix:
         scenario:
-          - ember-3.13
+          - ember-lts-3.4
+          - ember-lts-3.8
+          - ember-lts-3.12
           - ember-lts-3.16
           - ember-lts-3.20
           - ember-release

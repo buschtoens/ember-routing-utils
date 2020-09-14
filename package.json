@@ -14,7 +14,10 @@
     "parameters",
     "params"
   ],
-  "repository": "buschtoens/ember-routing-utils",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:buschtoens/ember-routing-utils.git"
+  },
   "license": "MIT",
   "author": "Jan Buschtöns <jan@buschtoens.me> (https://jan.buschtoens.me)",
   "scripts": {

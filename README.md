@@ -24,7 +24,7 @@ ember install ember-routing-utils
 #### `getParameters(routeInfo: RouteInfo): string[]`
 
 Retrieves all parameters for a `RouteInfo` object and its parents in correct
-oder, so that you can pass them to e.g. `transitionTo(routeName, ...params)`.
+order, so that you can pass them to e.g. `transitionTo(routeName, ...params)`.
 
 #### `getParametersWithQueryParameters(routeInfo: RouteInfo): string[]`
 

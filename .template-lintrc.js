@@ -1,6 +1,15 @@
 'use strict';
 
 module.exports = {
-  plugins: ['@clark/ember-template-lint-config'],
-  extends: 'clark:octane'
+  plugins: ['ember-template-lint-plugin-prettier'],
+  extends: ['recommended', 'ember-template-lint-plugin-prettier:recommended'],
+  rules: {},
+  overrides: [
+    {
+      files: ['tests/**/*-test.{js,ts}'],
+      rules: {
+        prettier: 'off',
+      },
+    },
+  ],
 };

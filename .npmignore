@@ -9,6 +9,7 @@
 /.bowerrc
 /.editorconfig
 /.ember-cli
+/.ember-cli.js
 /.env*
 /.eslintcache
 /.eslintignore
@@ -25,6 +26,7 @@
 /config/ember-try.js
 /CONTRIBUTING.md
 /ember-cli-build.js
+/RELEASE.md
 /testem.js
 /tests/
 /yarn-error.log
@@ -38,3 +40,7 @@
 /package.json.ember-try
 /package-lock.json.ember-try
 /yarn.lock.ember-try
+
+# TypeScript
+/jsconfig.json
+/tsconfig.json

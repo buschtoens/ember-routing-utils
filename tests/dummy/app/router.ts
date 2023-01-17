@@ -13,7 +13,7 @@ Router.map(function () {
     this.route('no-param');
     this.route('single-param', { path: 'single-param/:single_param' });
     this.route('double-param', {
-      path: 'double-param/:first_param/:second_param'
+      path: 'double-param/:first_param/:second_param',
     });
   });
   this.route(
@@ -23,9 +23,9 @@ Router.map(function () {
       this.route('no-param');
       this.route('single-param', { path: 'single-param/:single_param' });
       this.route('double-param', {
-        path: 'double-param/:first_param/:second_param'
+        path: 'double-param/:first_param/:second_param',
       });
-    }
+    },
   );
   this.route(
     'double-param',
@@ -34,8 +34,8 @@ Router.map(function () {
       this.route('no-param');
       this.route('single-param', { path: 'single-param/:single_param' });
       this.route('double-param', {
-        path: 'double-param/:first_param/:second_param'
+        path: 'double-param/:first_param/:second_param',
       });
-    }
+    },
   );
 });

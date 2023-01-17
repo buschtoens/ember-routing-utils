@@ -18,7 +18,7 @@ export default class RoutingUtilsService extends Service {
     let current: RouteInfo | null = routeInfo;
     do {
       const { params, paramNames } = current;
-      const currentParameters = paramNames.map(n => params[n] as string);
+      const currentParameters = paramNames.map((n) => params[n] as string);
       allParameters = [...currentParameters, ...allParameters];
       // eslint-disable-next-line no-cond-assign
     } while ((current = current.parent));
@@ -36,11 +36,11 @@ export default class RoutingUtilsService extends Service {
    * @param routeInfo
    */
   getParametersWithQueryParameters(
-    routeInfo: RouteInfo
+    routeInfo: RouteInfo,
   ): (string | { queryParams: Record<string, string | undefined> })[] {
     return [
       ...this.getParameters(routeInfo),
-      { queryParams: routeInfo.queryParams }
+      { queryParams: routeInfo.queryParams },
     ];
   }
 
@@ -54,8 +54,6 @@ export default class RoutingUtilsService extends Service {
   getURLFromRouteInfo(routeInfo: RouteInfo): string {
     const { name, queryParams } = routeInfo;
     const orderedParameters = this.getParameters(routeInfo);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error Types don't support spreading here yet.
     const url = this.router.urlFor(name, ...orderedParameters, { queryParams });
     return url;
   }

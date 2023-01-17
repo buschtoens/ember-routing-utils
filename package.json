@@ -129,7 +129,8 @@
     },
     "github": {
       "release": true,
-      "tokenRef": "GITHUB_AUTH"
+      "tokenRef": "GITHUB_AUTH",
+      "autoGenerate": true
     },
     "npm": {
       "publish": false

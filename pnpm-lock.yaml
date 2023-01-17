@@ -3,13 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   '@ember/edition-utils': ^1.2.0
   '@ember/optional-features': ^2.0.0
+  '@ember/test-helpers': ^2.9.3
   '@embroider/test-setup': ^2.0.2
   '@glimmer/component': ^1.1.2
   '@glimmer/tracking': ^1.1.2
   '@tsconfig/ember': ^2.0.0
   '@types/ember': ^4.0.3
-  '@types/ember-qunit': ^6.1.1
-  '@types/ember-resolver': ^9.0.0
   '@types/ember__application': ^4.0.5
   '@types/ember__array': ^4.0.3
   '@types/ember__component': ^4.0.12
@@ -26,7 +25,6 @@ specifiers:
   '@types/ember__string': ^3.0.10
   '@types/ember__template': ^4.0.1
   '@types/ember__test': ^4.0.1
-  '@types/ember__test-helpers': ^2.9.1
   '@types/ember__utils': ^4.0.2
   '@types/qunit': ^2.19.4
   '@typescript-eslint/eslint-plugin': ^5.48.2
@@ -77,13 +75,12 @@ dependencies:
 devDependencies:
   '@ember/edition-utils': 1.2.0
   '@ember/optional-features': 2.0.0
+  '@ember/test-helpers': 2.9.3_ember-source@4.10.0
   '@embroider/test-setup': 2.0.2
   '@glimmer/component': 1.1.2
   '@glimmer/tracking': 1.1.2
   '@tsconfig/ember': 2.0.0
   '@types/ember': 4.0.3
-  '@types/ember-qunit': 6.1.1_5ktap2q25e4atihwflggpmckye
-  '@types/ember-resolver': 9.0.0_ember-source@4.10.0
   '@types/ember__application': 4.0.5
   '@types/ember__array': 4.0.3
   '@types/ember__component': 4.0.12
@@ -100,7 +97,6 @@ devDependencies:
   '@types/ember__string': 3.0.10
   '@types/ember__template': 4.0.1
   '@types/ember__test': 4.0.1
-  '@types/ember__test-helpers': 2.9.1_ember-source@4.10.0
   '@types/ember__utils': 4.0.2
   '@types/qunit': 2.19.4
   '@typescript-eslint/eslint-plugin': 5.48.2_caon6io6stgpr7lz2rtbhekxqy
@@ -1907,29 +1903,6 @@ packages:
       '@types/node': 18.11.18
     dev: true
 
-  /@types/ember-qunit/6.1.1_5ktap2q25e4atihwflggpmckye:
-    resolution: {integrity: sha512-1g5A3vPKhvB/CuN/EP9rBLXYaJOjzKyLYWeBtNDEQNkTuG1dAo/Hg0CCixgbBgLlzaDP8mR/n1xpg8HqQ8SUKg==}
-    deprecated: This is a stub types definition. ember-qunit provides its own type definitions, so you do not need this installed.
-    dependencies:
-      ember-qunit: 6.1.1_5ktap2q25e4atihwflggpmckye
-    transitivePeerDependencies:
-      - ember-source
-      - qunit
-      - supports-color
-      - webpack
-    dev: true
-
-  /@types/ember-resolver/9.0.0_ember-source@4.10.0:
-    resolution: {integrity: sha512-lEuC2QD8K6rRAbELMejrALFBgelRPt6OQtapny4Oke07ZtK/Lbf9zn5KIDl7PNkirxMD0AStsQTdUqFu6eVbVw==}
-    deprecated: This is a stub types definition. ember-resolver provides its own type definitions, so you do not need this installed.
-    dependencies:
-      ember-resolver: 10.0.0_ember-source@4.10.0
-    transitivePeerDependencies:
-      - '@ember/string'
-      - ember-source
-      - supports-color
-    dev: true
-
   /@types/ember/4.0.3:
     resolution: {integrity: sha512-lRhIsa05KxPctv2mhVS/3lOwM8xnppEDsZu595Y+lE3IJhmhnXTjl3Ek+HMOPf53We2DFps+YeXSLm/UFiCILQ==}
     dependencies:
@@ -2072,17 +2045,6 @@ packages:
 
   /@types/ember__template/4.0.1:
     resolution: {integrity: sha512-hAxzdJa0zNvZSoHoCbtd0KGt6Dls4Aph9EwdtbUcdnlMiSUtEDUdKTtDbUrysqJjxGBr4vWIdJEqWtZ0/Y8KBw==}
-    dev: true
-
-  /@types/ember__test-helpers/2.9.1_ember-source@4.10.0:
-    resolution: {integrity: sha512-KZ6jYr0ZiQHlklLcfyuy1j+FkvygEayf5mZ9FcaSOahw9ghK3K5TYSRDCuIBELRw//OB/WP9J7v9NduFRNfRgg==}
-    deprecated: This is a stub types definition. @ember/test-helpers provides its own type definitions, so you do not need this installed.
-    dependencies:
-      '@ember/test-helpers': 2.9.3_ember-source@4.10.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - ember-source
-      - supports-color
     dev: true
 
   /@types/ember__test/4.0.1:

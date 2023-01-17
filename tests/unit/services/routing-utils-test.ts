@@ -3,8 +3,6 @@ import { type TestContext } from '@ember/test-helpers';
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import { register } from '../../helpers/test-context';
-
 module('Unit | Service | routing-utils', function (hooks) {
   setupTest(hooks);
 
@@ -19,9 +17,13 @@ module('Unit | Service | routing-utils', function (hooks) {
   }
 
   hooks.beforeEach<Ctx>(function () {
-    this.router = register('service:router', { instantiate: false }, {
+    this.router = {
       rootURL: '/',
-    } as RouterServiceMock as RouterService);
+    } satisfies RouterServiceMock;
+
+    this.owner.register('service:router', this.router as RouterService, {
+      instantiate: false,
+    });
 
     this.routingUtils = this.owner.lookup('service:routing-utils');
   });

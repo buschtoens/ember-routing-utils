@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ember/edition-utils': ^1.2.0
   '@ember/optional-features': ^2.0.0
   '@ember/test-helpers': ^2.9.3
   '@embroider/test-setup': ^2.0.2
@@ -39,11 +38,10 @@ specifiers:
   ember-cli-htmlbars: ^6.1.1
   ember-cli-inject-live-reload: ^2.1.0
   ember-cli-sri: ^2.1.1
+  ember-cli-terser: ^4.0.2
   ember-cli-typescript: ^5.2.1
   ember-cli-typescript-blueprints: ^3.0.0
-  ember-cli-uglify: ^3.0.0
   ember-disable-prototype-extensions: ^1.1.3
-  ember-export-application-global: ^2.0.1
   ember-load-initializers: ^2.1.2
   ember-qunit: ^6.1.1
   ember-resolver: ^10.0.0
@@ -73,7 +71,6 @@ dependencies:
   ember-cli-typescript: 5.2.1
 
 devDependencies:
-  '@ember/edition-utils': 1.2.0
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.9.3_ember-source@4.10.0
   '@embroider/test-setup': 2.0.2
@@ -110,10 +107,9 @@ devDependencies:
   ember-cli-htmlbars: 6.1.1
   ember-cli-inject-live-reload: 2.1.0
   ember-cli-sri: 2.1.1
+  ember-cli-terser: 4.0.2
   ember-cli-typescript-blueprints: 3.0.0
-  ember-cli-uglify: 3.0.0
   ember-disable-prototype-extensions: 1.1.3
-  ember-export-application-global: 2.0.1
   ember-load-initializers: 2.1.2
   ember-qunit: 6.1.1_5ktap2q25e4atihwflggpmckye
   ember-resolver: 10.0.0_ember-source@4.10.0
@@ -2132,7 +2128,7 @@ packages:
   /@types/glob/8.0.0:
     resolution: {integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA==}
     dependencies:
-      '@types/minimatch': 3.0.5
+      '@types/minimatch': 5.1.2
       '@types/node': 18.11.18
 
   /@types/htmlbars-inline-precompile/3.0.0:
@@ -2162,7 +2158,6 @@ packages:
 
   /@types/minimatch/5.1.2:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
-    dev: true
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
@@ -3634,21 +3629,20 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /broccoli-uglify-sourcemap/3.2.0:
-    resolution: {integrity: sha512-kkkn8v7kXdWwnZNekq+3ILuTAGkZoaoEMUYCKoER5/uokuoyTjtdYLHaE7UxHkuPEuLfjvJYv21sCCePZ74/2g==}
-    engines: {node: 6.* || 8.* || >= 10.*}
+  /broccoli-terser-sourcemap/4.1.0:
+    resolution: {integrity: sha512-zkNnjsAbP+M5rG2aMM1EE4BmXPUSxFKmtLUkUs2D1DLTOJQoF1xlOjGWjjKYCFy5tw8t4+tgGJ+HVa2ucJZ8sw==}
+    engines: {node: ^10.12.0 || 12.* || >= 14}
     dependencies:
       async-promise-queue: 1.0.5
-      broccoli-plugin: 1.3.1
+      broccoli-plugin: 4.0.7
       debug: 4.3.4
       lodash.defaultsdeep: 4.6.1
       matcher-collection: 2.0.1
-      mkdirp: 0.5.6
       source-map-url: 0.4.1
       symlink-or-copy: 1.3.1
-      terser: 4.8.1
-      walk-sync: 1.1.4
-      workerpool: 5.0.4
+      terser: 5.16.1
+      walk-sync: 2.2.0
+      workerpool: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5052,6 +5046,15 @@ packages:
     resolution: {integrity: sha512-PlJt4fUDyBrC/0X+4cOpaGCiMawaaB//qD85AXmDRikxhxVzfVdpuoec02HSiTGTTB85qCIzWBIh8lDOiMyyFg==}
     dev: true
 
+  /ember-cli-terser/4.0.2:
+    resolution: {integrity: sha512-Ej77K+YhCZImotoi/CU2cfsoZaswoPlGaM5TB3LvjvPDlVPRhxUHO2RsaUVC5lsGeRLRiHCOxVtoJ6GyqexzFA==}
+    engines: {node: 10.* || 12.* || >= 14}
+    dependencies:
+      broccoli-terser-sourcemap: 4.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /ember-cli-test-info/1.0.0:
     resolution: {integrity: sha512-dEVTIpmUfCzweC97NGf6p7L6XKBwV2GmSM4elmzKvkttEp5P7AvGA9uGyN4GqFq+RwhW+2b0I2qlX00w+skm+A==}
     dependencies:
@@ -5157,17 +5160,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
-
-  /ember-cli-uglify/3.0.0:
-    resolution: {integrity: sha512-n3QxdBfAgBdb2Cnso82Kt/nxm3ppIjnYWM8uhOEhF1aYxNXfM7AJrc+yiqTCDUR61Db8aCpHfAMvChz3kyme7g==}
-    engines: {node: 8.* || >= 10.*}
-    deprecated: Renamed to ember-cli-terser.
-    dependencies:
-      broccoli-uglify-sourcemap: 3.2.0
-      lodash.defaultsdeep: 4.6.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   /ember-cli-valid-component-name/1.0.0:
     resolution: {integrity: sha512-6ZtIG0UMmGwUUju5dwLLS98eZRLQxpMqXfpMUkZ8t+7MBdX6gCjVYHSCdGkDlVAGF06J3mgpAWHVrsyRLRn7/g==}
@@ -5394,11 +5386,6 @@ packages:
   /ember-disable-prototype-extensions/1.1.3:
     resolution: {integrity: sha512-SB9NcZ27OtoUk+gfalsc3QU17+54OoqR668qHcuvHByk4KAhGxCKlkm9EBlKJcGr7yceOOAJqohTcCEBqfRw9g==}
     engines: {node: '>= 0.10.0'}
-    dev: true
-
-  /ember-export-application-global/2.0.1:
-    resolution: {integrity: sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==}
-    engines: {node: '>= 4'}
     dev: true
 
   /ember-load-initializers/2.1.2:
@@ -11328,17 +11315,6 @@ packages:
       webpack: 5.75.0
     dev: true
 
-  /terser/4.8.1:
-    resolution: {integrity: sha512-4GnLC0x667eJG0ewJTa6z/yXrbLGv80D9Ru6HIpCQmO+Q4PfEtBFi0ObSckqwL6VyQv/7ENJieXHo2ANmdQwgw==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      acorn: 8.8.1
-      commander: 2.20.3
-      source-map: 0.6.1
-      source-map-support: 0.5.21
-    dev: true
-
   /terser/5.16.1:
     resolution: {integrity: sha512-xvQfyfA1ayT0qdK47zskQgRZeWLoOQ8JQ6mIgRGVNwZKdQMU+5FkCBjmv4QjcrTzyZquRw2FVtlJSRUmMKQslw==}
     engines: {node: '>=10'}
@@ -12185,10 +12161,6 @@ packages:
       rsvp: 4.8.5
     transitivePeerDependencies:
       - supports-color
-
-  /workerpool/5.0.4:
-    resolution: {integrity: sha512-Sywova24Ow2NQ24JPB68bI89EdqMDjUXo4OpofK/QMD7C2ZVMloYBgQ5J3PChcBJHj2vspsmGx1/3nBKXtUkXQ==}
-    dev: true
 
   /workerpool/6.3.1:
     resolution: {integrity: sha512-0x7gJm1rhpn5SPG9NENOxPtbfUZZtK/qOg6gEdSqeDBA3dTeR91RJqSPjccPRCkhNfrnnl/dWxSSj5w9CtdzNA==}

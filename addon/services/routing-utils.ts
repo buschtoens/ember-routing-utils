@@ -84,7 +84,30 @@ export default class RoutingUtilsService extends Service {
    */
   prefixRootURL(url: string): string {
     const { rootURL } = this.router;
-    return rootURL && !url.startsWith(rootURL) ? `${rootURL}${url}` : url;
+    return rootURL && !url.startsWith(rootURL)
+      ? this.joinPathSegments(rootURL, url)
+      : url;
+  }
+
+  private joinPathSegments(prefix: string, suffix: string): string {
+    if (!prefix) {
+      return suffix;
+    }
+    if (!suffix) {
+      return prefix;
+    }
+
+    if (prefix.endsWith('/')) {
+      if (suffix.startsWith('/')) {
+        return `${prefix}${suffix.slice(1)}`;
+      }
+      return `${prefix}${suffix}`;
+    }
+
+    if (suffix.startsWith('/')) {
+      return `${prefix}${suffix}`;
+    }
+    return `${prefix}/${suffix}`;
   }
 }
 
